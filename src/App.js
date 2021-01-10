@@ -18,7 +18,6 @@ const App = () => {
             }        
         }
         try{
-            console.log(buildUrl)
             const {data :{cases,active,recovered,deaths,updated}} = await axios.get(buildUrl) 
          
             setData({cases,active,recovered,deaths,updated})
@@ -38,7 +37,7 @@ const App = () => {
     return (
         <div className={AppStyles.container}>
             <h2 className={AppStyles.title}>Covid-19 Tracker</h2>
-            <Cards data={data}/>
+            <Cards data={data} country={country}/>
             <CountryPicker handleCountryChange={handleCountryChange} />
             <Chart data={data} country={country}/>
             <p>Data retrieved from disease.sh</p>
