@@ -21,7 +21,7 @@ App will be running at [http://localhost:3000](http://localhost:3000) by default
 Deployed with vercel. Link to [Demo](https://corona-track.vercel.app/)
 
 ## Reference
-- [Create React App](https://github.com/facebook/create-react-app)
+- [Create React App](https://facebook.github.io/create-react-app/docs/getting-started)
 - [Javascript Mastery](https://www.youtube.com/channel/UCmXmlB4-HJytD7wek0Uo97A)
 
 
