@@ -19,7 +19,7 @@ const App = () => {
         }
         try{
             const {data :{cases,active,recovered,deaths,updated}} = await axios.get(buildUrl) 
-            console.log(cases)
+         
             setData({cases,active,recovered,deaths,updated})
         }catch(error){
             console.log(error)
@@ -32,8 +32,6 @@ const App = () => {
 
     useEffect( ()=>{
        fetchData()
-       const interval = setInterval(fetchData,600000)
-       return ()=> clearInterval(interval)
     },[])
 
     return (
