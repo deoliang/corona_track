@@ -1,0 +1,29 @@
+.container {
+    margin: 50px 0;
+}
+
+.card {
+    margin: 5px 2% !important;
+}
+
+.confirmed {
+    border-top: 10px solid #87CEEB	
+}
+
+.active {
+    border-top: 10px solid #FFA500	
+}
+
+.recovered{
+    border-top: 10px solid #7FFF00		
+}
+
+.deaths{
+    border-top: 10px solid #DC143C	
+}
+
+@media (max-width:959px){
+    .card{
+        margin: 1% 0 !important;
+    }
+}
