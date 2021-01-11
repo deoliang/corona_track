@@ -68,7 +68,7 @@ const Chart = ({data:{cases,active,recovered,deaths},country}) => {
     const barChart = (
         cases
         ? (
-            <Bar
+            <Bar 
                 data={{
                     labels:['Confirmed','Active','Recovered','Deaths'],
                     datasets:[{
