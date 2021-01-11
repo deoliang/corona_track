@@ -5,13 +5,13 @@ import axios from 'axios'
 const url = 'https://disease.sh/v3/covid-19/all'
 const App = () => {
     const [data,setData] = useState({})
-    const [country,setCountry]=useState('')
+    const [country,setCountry]=useState("")
     const fetchData = async(country)=>{
         let buildUrl =  url
         if(country){
             if(country==='global'){
                 buildUrl = url
-                setCountry('')
+                setCountry("")
             }else{
                 buildUrl = `https://disease.sh/v3/covid-19/countries/${country}`
                 setCountry(country)
@@ -19,7 +19,6 @@ const App = () => {
         }
         try{
             const {data :{cases,active,recovered,deaths,updated}} = await axios.get(buildUrl) 
-         
             setData({cases,active,recovered,deaths,updated})
         }catch(error){
             console.log(error)
@@ -31,7 +30,7 @@ const App = () => {
     }
 
     useEffect( ()=>{
-       fetchData()
+        fetchData()
     },[])
 
     return (
