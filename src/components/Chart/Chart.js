@@ -1,6 +1,6 @@
 import React,{useState,useEffect} from 'react'
 import axios from 'axios'
-//import {fetchDailyData} from '../../api'
+import {specialCases} from '../../helpers'
 import {Line, Bar} from 'react-chartjs-2'
 import ChartStyles from './Chart.module.scss'
 const Chart = ({data:{cases,active,recovered,deaths},country}) => {
@@ -11,6 +11,7 @@ const Chart = ({data:{cases,active,recovered,deaths},country}) => {
         setFlag(true)
         let build = 'all'
         if(country){
+            country = specialCases(country)
             build = country
         }
         try{
@@ -42,6 +43,16 @@ const Chart = ({data:{cases,active,recovered,deaths},country}) => {
     const lineChart = (
         dailyData.length!==0
         ? (<Line 
+        options={{
+            scales: {
+                yAxes: [{
+                  ticks: {
+                    beginAtZero: true,
+                    callback: (value)=>{ if (value % 1 === 0) {return value;}}
+                  }
+                }],
+              }
+        }}
         data = {{
             labels: dailyData.date,
             datasets: [{
@@ -84,7 +95,15 @@ const Chart = ({data:{cases,active,recovered,deaths},country}) => {
                 }}
                 options={{
                     legend:{display:false},
-                    title:{display:true,text:`Current state in ${country}`}
+                    title:{display:true,text:`Current state in ${country}`},
+                    scales: {
+                        yAxes: [{
+                          ticks: {
+                            beginAtZero: true,
+                            callback: function(value) {if (value % 1 === 0) {return value;}}
+                          }
+                        }]
+                      }
                 }}
             />
         ) : null
