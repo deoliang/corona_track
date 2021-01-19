@@ -118,7 +118,8 @@ const Chart = ({ data: { cases, active, recovered, deaths }, country }) => {
                     datasets:[{
                         data:vaxData.doses,
                         label: 'Vaccination Doses',
-                        borderColor: '#87CEEB',
+                        borderColor: '#000000',
+                        
                     }]
                 }}
             />) : null
