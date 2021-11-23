@@ -84,16 +84,10 @@ const Chart = ({ data: { cases, active, recovered, deaths }, country }) => {
                         label: 'Confirmed',
                         borderColor: '#87CEEB',
                         fill: true,
-                    }
-                        , {
+                    } , {
                         data: dailyData.deaths,
                         label: 'Deaths',
                         borderColor: '#DC143C',
-                        fill: true,
-                    }, {
-                        data: dailyData.recovered,
-                        label: 'Recovered',
-                        borderColor: '#7FFF00',
                         fill: true,
                     }]
                 }}
